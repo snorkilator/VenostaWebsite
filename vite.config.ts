@@ -14,7 +14,7 @@ export default defineConfig({
   //for GH pages to work on build and commit
   build:{
     outDir: "docs",
-    assetsDir: ""
+    assetsDir: "VenostaWebsite"
   }
 
 })
