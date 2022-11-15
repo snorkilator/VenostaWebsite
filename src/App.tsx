@@ -7,6 +7,7 @@ function App() {
 
   return (
     <div className="App">
+      <button className='btn btn-primary'>bootstrap!!</button>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
