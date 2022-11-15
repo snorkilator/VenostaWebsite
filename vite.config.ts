@@ -11,5 +11,10 @@ export default defineConfig({
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
     }
   },
+  //for GH pages to work on build and commit
+  build:{
+    outDir: "docs",
+    assetsDir: ""
+  }
 
 })
