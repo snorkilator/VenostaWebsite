@@ -4,7 +4,8 @@
 Use Vite to build it:
 
 ```shell
-npm run build```
+npm run build
+```
 
 move the css and js files out of ./docs/venostaWebsite into parent director:
 
