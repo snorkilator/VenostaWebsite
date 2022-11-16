@@ -17,3 +17,10 @@ delete the empty directory:
 
 `rm -r ./docs/VenostaWebsite`
 
+# To make css smaller
+
+Take a look at the scss bootstrap. There is a main file in node_modules that tells the scss compiler what to import
+Less modules, less css output
+Don't break functionablity
+Ideally don't edit anything in node directory
+Try importing required files directly from styles.scss file in scss directory
