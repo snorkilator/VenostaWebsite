@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import {Button, Dropdown} from "react-bootstrap"
-
 
 // Import our custom CSS
 import './scss/styles.scss'
