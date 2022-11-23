@@ -8,39 +8,39 @@ export default function TopNav() {
     <header>
       <Container>
         <Navbar className="navbar navbar-expand-xl navbar- justify-content-center border-bottom">
-          <Nav className="row">
+          <Nav className="row ">
           <Link
-              className="nav-link col-auto"
-              data-rr-ui-event-key="/"
-              to="/"
+              className="nav-link col-auto "
+              data-rr-ui-event-key=""
+              to=""
             >
               <h3>Home</h3>
             </Link>
             <Link
               className="nav-link col-auto"
-              data-rr-ui-event-key="/about"
-              to="/about"
+              data-rr-ui-event-key="about"
+              to="about"
             >
               <h3>About</h3>
             </Link>
             <Link
               className="nav-link col-auto"
-              data-rr-ui-event-key="/coordinates"
-              to="/coordinates"
+              data-rr-ui-event-key="coordinates"
+              to="coordinates"
             >
               <h3>Contact Us</h3>
             </Link>
             <Link
               className="nav-link col-auto"
-              data-rr-ui-event-key="/calendar"
-              to="/calendar"
+              data-rr-ui-event-key="calendar"
+              to="calendar"
             >
               <h3>Calendar</h3>
             </Link>
             <Link
               className="nav-link col-auto"
-              data-rr-ui-event-key="/programs"
-              to="/programs"
+              data-rr-ui-event-key="programs"
+              to="programs"
             >
               <h3>Programs</h3>
             </Link>

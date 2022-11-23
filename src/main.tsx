@@ -16,35 +16,68 @@ import Root from "./Root";
 import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
+  // for local development
   {
-    path: "*",
+    path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      // {
-      //   path: "",
-      //   element: <Home />,
-      // },
-      // {
-      //   path: "/media",
-      //   element: <Media />,
-      // },
-      // {
-      //   path: "/programs",
-      //   element: <Programs />,
-      // },
-      // {
-      //   path: "/coordinates",
-      //   element: <Coordinates />,
-      // },
-      // {
-      //   path: "/about",
-      //   element: <About />,
-      // },
-      // {
-      //   path: "/calendar",
-      //   element: <Calendar />,
-      // },
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/media",
+        element: <Media />,
+      },
+      {
+        path: "/programs",
+        element: <Programs />,
+      },
+      {
+        path: "/coordinates",
+        element: <Coordinates />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/calendar",
+        element: <Calendar />,
+      },
+    ],
+  },
+  // for GH pages
+  {
+    path: "venostawebsite",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "media",
+        element: <Media />,
+      },
+      {
+        path: "programs",
+        element: <Programs />,
+      },
+      {
+        path: "coordinates",
+        element: <Coordinates />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "calendar",
+        element: <Calendar />,
+      },
     ],
   },
 ]);
