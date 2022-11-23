@@ -9,7 +9,6 @@ import {
 
 function App() {
   return (
-    <>
       <main className="container">
         <Row className="g-3">
           <Col md={12}>
@@ -86,7 +85,6 @@ function App() {
         </Row>
         <br />
       </main>
-    </>
   );
 }
 
