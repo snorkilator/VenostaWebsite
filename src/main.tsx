@@ -17,7 +17,7 @@ import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
   {
-    path: "/venostawebsite",
+    path: "/VenostaWebsite",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
