@@ -17,34 +17,34 @@ import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "*",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/media",
-        element: <Media />,
-      },
-      {
-        path: "/programs",
-        element: <Programs />,
-      },
-      {
-        path: "/coordinates",
-        element: <Coordinates />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/calendar",
-        element: <Calendar />,
-      },
+      // {
+      //   path: "",
+      //   element: <Home />,
+      // },
+      // {
+      //   path: "/media",
+      //   element: <Media />,
+      // },
+      // {
+      //   path: "/programs",
+      //   element: <Programs />,
+      // },
+      // {
+      //   path: "/coordinates",
+      //   element: <Coordinates />,
+      // },
+      // {
+      //   path: "/about",
+      //   element: <About />,
+      // },
+      // {
+      //   path: "/calendar",
+      //   element: <Calendar />,
+      // },
     ],
   },
 ]);
