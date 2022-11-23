@@ -6,20 +6,10 @@ import {
   Row,
   Image,
 } from "react-bootstrap";
-import TopNav from "./TopNav"
-import SiteFooter from "./SiteFooter"
-import About from "./About"
-import Coordinates from "./Coordinates";
-import Media from "./Media";
-import Programs from "./Programs";
-import YouthCaledendar from "./YouthCalendar";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <TopNav />
       <main className="container">
         <Row className="g-3">
           <Col md={12}>
@@ -96,7 +86,6 @@ function App() {
         </Row>
         <br />
       </main>
-      <SiteFooter />
     </>
   );
 }
