@@ -17,12 +17,12 @@ import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "/venostawebsite",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home />,
       },
       {
