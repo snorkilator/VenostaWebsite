@@ -21,3 +21,24 @@ export default function Programs() {
   const danger = md.render(test);
   return <Container ><Row  >{parse(danger)}</Row></Container>;
 }
+
+
+// for each dropdown
+// layout
+//    Two paragraphs, option of picture to accompany each Paragraph
+//    photos: ability to specify before or after paragraph for mobile
+//    Desktop view
+//      click dropdowns to maximize and minimize
+//    mobile view
+//      only keep one dropdown open at a time
+//      Close button to return to programs menu
+//    load photos on dropdown, keep loaded after initial load
+// input is array (list of programs)
+//    title of program (string)
+//    array of paragraphs each item containing
+//        MD for paragraph (string)
+//        high and low res image links ({highRes: "string", lowRes: "string"})
+//        can't be too skinny so requirement like: these must be square or up to 16:9
+//          lowRes, link to aws bucket (string)
+//          highRes,  link to aws bucket (string)
+//        flag indicating that the image goes above or below the paragraph (bool)
