@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Remarkable } from "remarkable";
 import parse from "html-react-parser";
-import { Container, Row, Col, Image, Collapse, Button } from "react-bootstrap";
+import { Container, Image, Collapse, } from "react-bootstrap";
 
 export default function Programs() {
   type Programs = {
@@ -42,7 +42,8 @@ export default function Programs() {
       programTitle: "Skills Link",
       paragraphs: [
         {
-          markDown: "## ```beautiful things can happen when you know how to code``` \n Semi-professional leagues have grown in popularity in recent years, with the Alberta Football League becoming especially popular. The Northern Football Conference formed in Ontario in 1954 has also surged in popularity for former college players who do not continue to professional football. The Ontario champion plays against the Alberta champion for the 'National Championship'. The Canadian Major Football League is the governing body for the semi-professional game.",
+          markDown:
+            "## ```beautiful things can happen when you know how to code``` \n Semi-professional leagues have grown in popularity in recent years, with the Alberta Football League becoming especially popular. The Northern Football Conference formed in Ontario in 1954 has also surged in popularity for former college players who do not continue to professional football. The Ontario champion plays against the Alberta champion for the 'National Championship'. The Canadian Major Football League is the governing body for the semi-professional game.",
           highResImage:
             "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg",
           lowResImage:
@@ -68,19 +69,6 @@ export default function Programs() {
   let [open, setOpen] = useState(false);
 
   let md = new Remarkable();
-  const test = `
-  # List of dependencies
-
-  * [Remarkable](https://github.com/jonschlinkert/remarkable) for md to HTML on the fly
-    * checkout config in GH
-  * react-bootstrap for bootstrap react pre-build components (can do this without this with plain bootstrap)
-  * html-react-parser for string to react html elements
-    * might be unsafe
-  * react-router-dom for browser side routing
-  * all asociated typescript files (d.ts)
-  
-  ![image](https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg)
-    `;
   let ProgramsElements = programsData.map((program) => {
     return (
       <article id="A/V club" className="container-fluid p-0">
@@ -108,16 +96,12 @@ export default function Programs() {
       </article>
     );
   });
-  const danger = md.render(test);
   return (
     <main>
       <Container>
         <h1 className="text-center">Programs</h1>
-        {ProgramsElements}</Container>
-      
-      {/* <Container>
-        <Row>{parse(danger)}</Row>
-      </Container> */}
+        {ProgramsElements}
+      </Container>
     </main>
   );
 }
@@ -132,6 +116,8 @@ export default function Programs() {
 //      only keep one dropdown open at a time
 //      Close button to return to programs menu
 //    load photos on dropdown, keep loaded after initial load
+
+//DATASTRUCTURE:
 // input is array (list of programs)
 //    title of program (string)
 //    array of paragraphs each item containing
