@@ -19,9 +19,12 @@ export default function Programs() {
   ![image](https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg)
     `;
   const danger = md.render(test);
-  return <Container ><Row  >{parse(danger)}</Row></Container>;
+  return (
+    <Container>
+      <Row>{parse(danger)}</Row>
+    </Container>
+  );
 }
-
 
 // for each dropdown
 // layout
@@ -42,3 +45,70 @@ export default function Programs() {
 //          lowRes, link to aws bucket (string)
 //          highRes,  link to aws bucket (string)
 //        flag indicating that the image goes above or below the paragraph (bool)
+
+type Programs = {
+  programTitle: string;
+  paragraphs: {
+    markDown: string;
+    highResImage: string;
+    lowResImage: string;
+    mobileImageAfterParagraph: boolean;
+  }[];
+}[];
+
+let programs: Programs = [
+  {
+    programTitle: "Skills Link",
+    paragraphs: [
+      {
+        markDown: `
+# List of dependencies
+
+* [Remarkable](https://github.com/jonschlinkert/remarkable) for md to HTML on the fly
+  * checkout config in GH
+* react-bootstrap for bootstrap react pre-build components (can do this without this with plain bootstrap)
+* html-react-parser for string to react html elements
+  * might be unsafe
+* react-router-dom for browser side routing
+* all asociated typescript files (d.ts)
+  `,
+        highResImage:
+          "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg",
+        lowResImage:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/320px-Flag_of_Canada_%28Pantone%29.svg.png",
+        mobileImageAfterParagraph: false,
+      },
+    ],
+  },
+  {
+    programTitle: "Skills Link",
+    paragraphs: [
+      {
+        markDown: `
+# List of dependencies
+
+## beautiful things can happen when you know how to code
+  `,
+        highResImage:
+          "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg",
+        lowResImage:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/320px-Flag_of_Canada_%28Pantone%29.svg.png",
+
+        mobileImageAfterParagraph: false,
+      },
+      {
+        markDown: `
+# List of dependencies
+
+## beautiful things can happen when you know how to code
+  `,
+        highResImage:
+          "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg",
+        lowResImage:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/320px-Flag_of_Canada_%28Pantone%29.svg.png",
+
+        mobileImageAfterParagraph: false,
+      },
+    ],
+  },
+];
