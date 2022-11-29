@@ -83,16 +83,18 @@ export default function Programs() {
             {open ? "▲" + program.programTitle : "▼" + program.programTitle}
           </h2>
         </Container>
-        <Collapse className="m-3" in={open}>
+        {program.paragraphs.map((paragraph)=>{
+          return  <Collapse className="m-3" in={open}>
           <div id="example-collapse-text">
             <img
               style={{ width: 200 }}
               className="m-left-4 float-end"
-              src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg"
+              src={paragraph.highResImage}
             />
-            <p>{parse(md.render(program.paragraphs[0].markDown))}</p>
+            <p>{parse(md.render(paragraph.markDown))}</p>
           </div>
         </Collapse>
+        })}
       </article>
     );
   });
