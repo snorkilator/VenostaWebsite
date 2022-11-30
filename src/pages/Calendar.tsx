@@ -77,5 +77,6 @@ export default function YouthCaledendar(){
         };
       }, []);
   
-    return <Eventcalendar data={events} renderEvent={renderEvent} view={myView as any}/>;
+    return <Eventcalendar data={events} theme="material" 
+    themeVariant="light" renderEvent={renderEvent} view={myView as any}/>;
 }
