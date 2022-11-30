@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.20.0.tgz",
     "@popperjs/core": "^2.11.6",
     "@types/react-router-dom": "^5.3.3",
     "@types/remarkable": "^2.0.3",

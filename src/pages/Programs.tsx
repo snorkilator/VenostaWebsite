@@ -1,19 +1,63 @@
 import { useState } from "react";
 import { Remarkable } from "remarkable";
 import parse from "html-react-parser";
-import { Container, Image, Collapse, } from "react-bootstrap";
+import { Container, Image, Collapse } from "react-bootstrap";
+type Paragraph = {
+  markDown: string;
+  highResImage: string;
+  lowResImage: string; //TODO: not implimenting this right away
+  mobileImageAfterParagraph: boolean; //TODO: not implimenting this right away
+};
 
+type Program = {
+  programTitle: string;
+  paragraphs: Paragraph[];
+};
+type Programs = Program[];
+
+export function ParagraphBlock(props: { paragraph: Paragraph }) {
+  let md = new Remarkable();
+  return (
+    <>
+      <img
+        style={{ width: 200 }}
+        className="m-left-4 float-end"
+        src={props.paragraph.highResImage}
+      />
+      <div>{parse(md.render(props.paragraph.markDown))}</div>
+    </>
+  );
+}
+
+export function DropDownSection(props: { program: Program }) {
+  let [open, setOpen] = useState(false);
+
+  return (
+    <article id={props.program.programTitle} className="container-fluid p-0">
+      <Container
+        className="btn square border"
+        onClick={() => setOpen((prev) => !prev)}
+        aria-controls={props.program.programTitle}
+        aria-expanded={open}
+      >
+        <h2>
+          {open
+            ? "▲" + props.program.programTitle
+            : "▼" + props.program.programTitle}
+        </h2>
+      </Container>
+      <Collapse in={open}>
+        <div id="example-collapse-text">
+        <br />
+          {props.program.paragraphs.map((paragraph, index) => (
+            <ParagraphBlock key={index} paragraph={paragraph} />
+          ))}
+        </div>
+      </Collapse>
+    </article>
+  );
+}
 export default function Programs() {
-  type Programs = {
-    programTitle: string;
-    paragraphs: {
-      markDown: string;
-      highResImage: string;
-      lowResImage: string; //TODO: not implimenting this right away
-      mobileImageAfterParagraph: boolean;
-    }[];
-  }[];
-
   let programsData: Programs = [
     {
       programTitle: "Skills Link",
@@ -65,38 +109,8 @@ export default function Programs() {
       ],
     },
   ];
-
-  let [open, setOpen] = useState(false);
-
-  let md = new Remarkable();
-  let ProgramsElements = programsData.map((program) => {
-    return (
-      <article id="A/V club" className="container-fluid p-0">
-        <Image src=""></Image>
-        <Container
-          className="btn square border"
-          onClick={() => setOpen(!open)}
-          aria-controls="A/V-club"
-          aria-expanded={open}
-        >
-          <h2>
-            {open ? "▲" + program.programTitle : "▼" + program.programTitle}
-          </h2>
-        </Container>
-        {program.paragraphs.map((paragraph)=>{
-          return  <Collapse className="m-3" in={open}>
-          <div id="example-collapse-text">
-            <img
-              style={{ width: 200 }}
-              className="m-left-4 float-end"
-              src={paragraph.highResImage}
-            />
-            <p>{parse(md.render(paragraph.markDown))}</p>
-          </div>
-        </Collapse>
-        })}
-      </article>
-    );
+  let ProgramsElements = programsData.map((program, index) => {
+    return <DropDownSection key={index} program={program} />;
   });
   return (
     <main>
