@@ -138,8 +138,12 @@ function EventDetails() {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Row className="fluid">
-          <Col sm={12}>{event.start.toDateString()} at {event.location}</ Col>
-          <Col sm={12}><Modal.Title>{event.title}</Modal.Title></Col>
+            <Col sm={12}>
+              {event.start.toDateString()} at {event.location}
+            </Col>
+            <Col sm={12}>
+              <Modal.Title>{event.title}</Modal.Title>
+            </Col>
           </Row>
         </Modal.Header>
         <Modal.Body>
@@ -174,10 +178,10 @@ function EventDetails() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={"todo"}>
+          <Button variant="secondary" onClick={() => {}}>
             Share
           </Button>
-          <Button variant="secondary" onClick={"todo"}>
+          <Button variant="secondary" onClick={() => {}}>
             Add to calendar
           </Button>
         </Modal.Footer>
