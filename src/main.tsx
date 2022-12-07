@@ -59,41 +59,45 @@ const router = createBrowserRouter([
     ],
   },
   // for GH pages
-  // {
-  //   path: "venostawebsite",
-  //   element: <Root />,
-  //   errorElement: <ErrorPage />,
-  //   children: [
-  //     {
-  //       index: true,
-  //       element: <Home />,
-  //     },
-  //     {
-  //       path: "media",
-  //       element: <Media />,
-  //     },
-  //     {
-  //       path: "programs",
-  //       element: <Programs />,
-  //     },
-  //     {
-  //       path: "coordinates",
-  //       element: <Coordinates />,
-  //     },
-  //     {
-  //       path: "about",
-  //       element: <About />,
-  //     },
-  //     {
-  //       path: "calendar",
-  //       element: <Donate />,
-  //     },
-  //     {
-  //       path: "donate",
-  //       element: <Donate />,
-  //     },
-  //   ],
-  // },
+  {
+    path: "venostawebsite",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "media",
+        element: <Media />,
+      },
+      {
+        path: "programs",
+        element: <Programs />,
+      },
+      {
+        path: "coordinates",
+        element: <Coordinates />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "calendar",
+        element: <Calendar />,
+      },
+      {
+        path: "donate",
+        element: <Donate />,
+      },
+      {
+        path: "locations",
+        element: <Locations />,
+      },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
