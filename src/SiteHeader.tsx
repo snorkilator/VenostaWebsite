@@ -9,12 +9,21 @@ export default function TopNav() {
       <Container>
         <Navbar className="navbar navbar-expand-xl navbar- justify-content-center border-bottom">
           <Nav className="row ">
-          <Link
+            <Link className="nav-link col-auto " data-rr-ui-event-key="" to="">
+              <h3>Home</h3>
+            </Link>
+            <Link
               className="nav-link col-auto "
               data-rr-ui-event-key=""
-              to=""
+              to="donate"
+            ><h3>Donate</h3></Link>
+            <Link
+              className="nav-link col-auto "
+              data-rr-ui-event-key=""
+              to="locations"
             >
-              <h3>Home</h3>
+
+              <h3>Locations</h3>
             </Link>
             <Link
               className="nav-link col-auto"
@@ -23,6 +32,15 @@ export default function TopNav() {
             >
               <h3>About</h3>
             </Link>
+
+            <Link
+              className="nav-link col-auto"
+              data-rr-ui-event-key="media"
+              to="media"
+            >
+              <h3>Media</h3>
+            </Link>
+
             <Link
               className="nav-link col-auto"
               data-rr-ui-event-key="coordinates"
