@@ -96,11 +96,16 @@ export default function SiteFooter(){
 
           <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <h6 className="text-uppercase fw-bold mb-4">Find us</h6>
-            <Image
-              fluid
-              src="https://s1.cdn.autoevolution.com/images/news/google-maps-data-confirms-the-traffic-trends-everybody-expected-151897_1.jpg"
-              alt="location on map"
-            ></Image>
+            <div className="map-responsive">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2778.027900889888!2d-76.02678348442885!3d45.870751379107865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cd1c99b7740bbcd%3A0xde32ef4ead69d9d8!2sBe%20and%20Become%20-%20Venosta%20Station!5e0!3m2!1sen!2sca!4v1670273065519!5m2!1sen!2sca"
+              width="600"
+              height="450"
+              frameBorder="0"
+              style={{ border: 0 }}
+              // allowFullscreen = {true}
+            ></iframe>
+          </div>
           </div>
         </div>
       </div>
