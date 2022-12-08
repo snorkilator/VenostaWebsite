@@ -130,7 +130,7 @@ function EventModal(props: {
       <Modal.Header closeButton>
         <Row className="fluid">
           <Col sm={12}>
-            {props.event.start && props.event.start.toDateString()} at
+            {props.event.start instanceof Date ? props.event.start.toDateString() : props.event.start} at
             {props.event.location}
           </Col>
           <Col sm={12}>
