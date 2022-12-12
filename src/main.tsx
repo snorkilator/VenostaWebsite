@@ -13,8 +13,7 @@ import Programs from "./pages/Programs";
 import Calendar from "./pages/Calendar";
 import Donate from "./pages/Donate";
 import Root from "./Root";
-import Locations from "./pages/Locations"
-
+import Locations from "./pages/Locations";
 import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
