@@ -1,43 +1,11 @@
 import { useState, useCallback, useMemo } from "react";
 import { Container, Col, Modal, Form, Row, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 import {
   Eventcalendar,
-  toast,
-  MbscEventClickEvent,
-  EventcalendarBase,
   MbscCalendarEvent,
 } from "@mobiscroll/react";
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
-
-// import { initializeApp } from "firebase/app";
-// import {
-//   getFirestore,
-//   collection,
-//   connectFirestoreEmulator,
-// } from "firebase/firestore";
-
-// Initialize Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyDlgO68_iznv5sVPgY5lNilnCpwAiRfhcA",
-
-  authDomain: "todo-app-ec65a.firebaseapp.com",
-
-  projectId: "todo-app-ec65a",
-
-  storageBucket: "todo-app-ec65a.appspot.com",
-
-  messagingSenderId: "822873561393",
-
-  appId: "1:822873561393:web:b581313c15ad7c4202f810",
-
-  measurementId: "G-BMS5NZ1W7Z",
-};
-
-// const app = initializeApp(firebaseConfig);
-// const db = getFirestore(app);
-// connectFirestoreEmulator(db, "localhost", 8080);
 
 export default function YouthCaledendar() {
   const [selectedEvent, setSelectedEvent] = useState(
