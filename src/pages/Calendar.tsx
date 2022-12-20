@@ -1,9 +1,11 @@
+//TODO: get mobiscroll license
+
 import { useState, useCallback, useMemo } from "react";
 import { Container, Col, Modal, Form, Row, Button } from "react-bootstrap";
 
 import {
-  Eventcalendar,
   MbscCalendarEvent,
+  Eventcalendar
 } from "@mobiscroll/react";
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 
@@ -19,6 +21,7 @@ export default function YouthCaledendar() {
     description:
       "Être et Devenir / Be and Become started up under ACSADK Assn. in Kazabazua in 2011 with a federal Skills Link project, an employment program for out of school and work youth, funded by Service Canada; now we exist as a not-for-profit organization.  With the need for a youth centre in this region, we were donated the train station in 2017. ",
     location: "The Station",
+    image: "https://docs.google.com/forms/d/e/1FAIpQLSfMHXSw0v9JQFu9Qm-1YefcIv19LsgNc-YHcHyKAcEvJ5rMTw/viewform?embedded=true"
   };
   let eventTwo: MbscCalendarEvent = {
     start: new Date(2022, 11, 8),

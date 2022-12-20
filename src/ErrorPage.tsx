@@ -9,7 +9,7 @@ export default function ErrorPage() {
   }
   return (
     <div id="error-page">
-      <h1>Houston we have a problem... or... an error</h1>
+      <h1>Houston we have an error</h1>
       <p>
         <i>{fixThisLater.statusText || fixThisLater.errorMessage}</i>
       </p>
