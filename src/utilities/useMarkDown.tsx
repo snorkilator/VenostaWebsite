@@ -1,12 +1,9 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import {
   onSnapshot,
-  setDoc,
   getFirestore,
   doc,
-  getDoc,
-  collection,
   connectFirestoreEmulator,
 } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
@@ -25,22 +22,13 @@ const app = initializeApp({
 });
 const db = getFirestore(app);
 // connectFirestoreEmulator(db, "localhost", 8080); //TODO: turn this off when deploying
-let docRef = doc(collection(db, "test"), "test");
-
-export default function Donate() {
-  let [text, setText] = useState();
-  // setTimeout(()=>setDoc(docRef, {test:"test3"}), 10000)
-  getDoc(doc(collection(db, "test"), "test"))
-    .then((data) => {
-      data.exists() && console.log(data.data());
-    })
-    .catch((err) => console.log(err));
-  onSnapshot(doc(collection(db, "/markdown"), "contact_us"), (data) => {
-    data.exists() && setText(data.data()["text"]);
-  });
-  return (
-    <Container>
-      <h1>{text && text}</h1>
-    </Container>
-  );
+export default function useMarkDown(
+  setText: React.Dispatch<React.SetStateAction<string>>,
+  path: string
+) {
+  useEffect(() => onSnapshot(doc(db, path), (data) => {
+    if (data.exists()) {
+      setText(data.data()["text"]);
+    }
+  }),[])
 }

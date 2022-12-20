@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col, Form, FormLabel, Button } from "react-bootstrap";
+import MarkDown from "../utilities/MarkDown";
 // import key from "../apikeys/maps.apikey"
 
 export default function Coordinates() {
@@ -7,14 +8,7 @@ export default function Coordinates() {
     <Container className="text-center">
       <Row>
         <Col sm={12} md={6}>
-          <h5>Address:</h5>
-          <address>8 Chem. de la Station, Venosta, QC J0X 3E0</address>
-          <h5>Email:</h5> <address>venostastation+web@gmail.com</address>
-          <h5>Phone:</h5> <address>(XXX) XXX XXXX</address>
-          <h5>Opening hours:</h5>
-          <p>
-            5pm-8pm Friday <br /> 4pm-6pm Monday-Thursday
-          </p>
+          <MarkDown path="/markdown/contact_us" />
         </Col>
         <Col sm={12} md={6}>
           <Form className="row justify-content-center">
